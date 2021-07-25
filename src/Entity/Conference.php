@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=ConferenceRepository::class)
@@ -24,16 +25,19 @@ class Conference
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("conreferences")
      */
     private $city;
 
     /**
      * @ORM\Column(type="string", length=4)
+     * @Groups("conreferences")
      */
     private $year;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups("conreferences")
      */
     private $isInternational;
 
